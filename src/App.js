@@ -5,18 +5,22 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 //Styles and components
 import './App.css';
+import HomePage from './pages/HomePage';
 import CreateUserPage from './pages/CreateUser';
 import LoginPage from './pages/Login';
-import UserProfilePage from './pages/UserProfile';
+import UserOverview from './pages/UserOverview';
+import CreatePostPage from './pages/CreatePost';
+import FindFriendsPage from './pages/FindFriends';
+import Dashboard from './pages/Dashboard';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDY_zsbyE-QhS_mv_0-5r5c-6hPsxuT7w4",
-  authDomain: "dwa-exercise-six.firebaseapp.com",
-  projectId: "dwa-exercise-six",
-  storageBucket: "dwa-exercise-six.appspot.com",
-  messagingSenderId: "633596556954",
-  appId: "1:633596556954:web:feb93eee6ea3d1cca39123"
+  apiKey: "AIzaSyBz8UyYj6vUzf7ANZAM9HWQeV98cbUrpoY",
+  authDomain: "dwa-finalproj.firebaseapp.com",
+  projectId: "dwa-finalproj",
+  storageBucket: "dwa-finalproj.appspot.com",
+  messagingSenderId: "998628744693",
+  appId: "1:998628744693:web:0094eb6d27475d2e1714bc"
 };
   
 function App() {
@@ -29,7 +33,19 @@ function App() {
     {
       path: "/",
       element: (
-        <UserProfilePage 
+        <HomePage 
+          isLoading={isLoading} 
+          isLoggedIn={isLoggedIn} 
+          userInformation={userInformation}
+          setIsLoggedIn={setIsLoggedIn} 
+          setUserInformation={setUserInformation}
+         />
+      ),
+    },
+    {
+      path: "/user:id",
+      element: (
+        <UserOverview 
           isLoading={isLoading} 
           isLoggedIn={isLoggedIn} 
           userInformation={userInformation}
@@ -44,20 +60,55 @@ function App() {
           <LoginPage 
             isLoading={isLoading} 
             isLoggedIn={isLoggedIn}
+            userInformation={userInformation}
             setIsLoggedIn={setIsLoggedIn} 
             setUserInformation={setUserInformation}
           />
-        ),//prop iisLogged in tels us if false, go to login or create, if true, go to user profile
+        ),//prop isLogged in tells us if false, go to login or create, if true, go to user profile
     },
     {
-        path: "/create",
+        path: "/create-user",
         element: (
           <CreateUserPage 
             isLoading={isLoading}
             isLoggedIn={isLoggedIn}
+            userInformation={userInformation}
             setIsLoggedIn={setIsLoggedIn} 
             setUserInformation={setUserInformation} />
         ),
+    },
+    {
+      path: "/create-post",
+      element: (
+        <CreatePostPage 
+          isLoading={isLoading}
+          isLoggedIn={isLoggedIn}
+          userInformation={userInformation}
+          setIsLoggedIn={setIsLoggedIn} 
+          setUserInformation={setUserInformation} />
+      ),
+    },
+    {
+      path: "/find-friends",
+      element: (
+        <FindFriendsPage 
+          isLoading={isLoading}
+          isLoggedIn={isLoggedIn}
+          userInformation={userInformation}
+          setIsLoggedIn={setIsLoggedIn} 
+          setUserInformation={setUserInformation} />
+      ),
+    },
+    {
+      path: "/dashboard",
+      element: (
+        <Dashboard 
+          isLoading={isLoading}
+          isLoggedIn={isLoggedIn}
+          userInformation={userInformation}
+          setIsLoggedIn={setIsLoggedIn} 
+          setUserInformation={setUserInformation} />
+      ),
     },
   ]);
   //ensure app is initialized when it is ready to be

@@ -1,5 +1,7 @@
 import React from 'react';
-import { getAuth, signOut } from 'firebase/auth'
+import { getAuth, signOut } from 'firebase/auth';
+import { Link } from "react-router-dom";
+
 
 function Header( {isLoggedIn, setIsLoggedIn, setUserInformation}) {
     function logout() {
@@ -17,10 +19,42 @@ function Header( {isLoggedIn, setIsLoggedIn, setUserInformation}) {
     return (
         <header>
             <nav>
-                {isLoggedIn && (<a href="/"><p>Home</p></a>)}
-                {!isLoggedIn && (<a href="/login"><p>Login</p></a>)}
-                {!isLoggedIn && (<a href="/create"><p>Create User</p></a>)}
-                {isLoggedIn && (<p onClick={() => logout()} className="logout-button">Log Out</p>)}
+                <div className="nav--logo">
+                    <a href="/"><p>brand&nbsp;</p>
+                        <p style={{color: "#D0B7B7"}}>1</p>
+                        <p style={{color: "#685044"}}>2</p>
+                        <p style={{color: "#20A4F3"}}>3</p>
+                    </a>
+                </div>
+                <div className="nav--links">
+                    {isLoggedIn && (
+                        <li className="create-post--nav">
+                            <Link to="/create-post"><p>Create</p></Link>
+                        </li>
+                    )}
+                    {!isLoggedIn && (
+                        <li className="create-post--nav">
+                            <Link to="/login"><p>Create</p></Link>
+                        </li>
+                    )}
+                    
+                    {!isLoggedIn && (
+                        <li>
+                            <Link to="/login"><p>Login</p></Link>
+                        </li>
+                    )}
+                    {!isLoggedIn && (
+                        <li>
+                            <Link to="/create-user"><p>Create User</p></Link>
+                        </li>
+                    )}
+                    {isLoggedIn && (
+                        <li>
+                            <Link to="/user:id"><p>Profile</p></Link>
+                        </li>
+                    )}
+                    {isLoggedIn && (<Link to="/login" onClick={() => logout()} className="logout-button"><p>Log Out</p></Link>)}
+                </div>
             </nav>
         </header>
     );

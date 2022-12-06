@@ -1,5 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import { useEffect, React, useState, useCallback } from 'react';
 import CreateUserForm from '../components/CreateUserForm';
 import Header from '../components/Header';
@@ -49,10 +50,12 @@ function CreateUserPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformati
     return (
         <>
         <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUserInformation={setUserInformation}/>
-            <div className="PageWrapper">
+            <div className="PageWrapper UserAuth">
                 <h1>Create User</h1>
                 <CreateUserForm signUpUser={signUpUser}/>
                 <p>{errors}</p>
+                <p>Already have an account?</p>
+                <li><Link to="/login"><p>Login</p></Link></li>
             </div>
         </>
     );
