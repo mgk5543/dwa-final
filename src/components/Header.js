@@ -20,10 +20,7 @@ function Header( {isLoggedIn, setIsLoggedIn, setUserInformation}) {
         <header>
             <nav>
                 <div className="nav--logo">
-                    <a href="/"><p>brand&nbsp;</p>
-                        <p style={{color: "#D0B7B7"}}>1</p>
-                        <p style={{color: "#685044"}}>2</p>
-                        <p style={{color: "#20A4F3"}}>3</p>
+                    <a href="/"><p>brandspiration</p>
                     </a>
                 </div>
                 <div className="nav--links">

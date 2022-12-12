@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-function Post({ caption, imageAlt, imageSrc, userName, userId }) {
+function Post({ caption, imageAlt, imageUrl, userName, userId }) {
     return (
         <div className="PostWrapper">
-            <img src="" alt="" />
-            <p className="Caption">Text</p>
-            <p>Posted by: <Link to={`user/${userId}`}>{userName}</Link></p>
+            <img 
+            src={imageUrl} 
+            alt={imageAlt}
+             />
+            <p className="Caption">{caption}</p>
+            <p>Posted by: <a href={`user/${userId}`}>{userName}</a></p>
         </div>
     )
 }

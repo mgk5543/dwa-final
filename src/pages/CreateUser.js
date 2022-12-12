@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useEffect, React, useState, useCallback } from 'react';
@@ -20,6 +20,7 @@ function CreateUserPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformati
 
             const email = e.currentTarget.email.value;
             const password = e.currentTarget.password.value;
+            const displayName = e.currentTarget.displayName.value;
 
             //console.log({email, password});
             const auth = getAuth();
@@ -28,13 +29,23 @@ function CreateUserPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformati
                 .then((userCredential) => {
                     const user = userCredential.user;
                     setIsLoggedIn(true);
-                    setUserInformation({
-                        email: user.email,
-                        displayName: user.displayName,
-                        uid: user.uid,
-                        accessToken: user.accessToken,
-                    });
                     setErrors();
+
+                updateProfile(user, { displayName: displayName })
+                    .then(() => {
+                        setUserInformation({
+                            email: user.email,
+                            displayName,
+                            uid: user.id,
+                            accessToken: user.accessToken,
+                        });
+                    })
+                    .catch((err) => {
+                        const errorCode = err.code;
+                        const errorMessage = err.message;
+                        console.warn({err, errorCode, errorMessage});
+                        setErrors(errorMessage);
+                    });
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -55,7 +66,7 @@ function CreateUserPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformati
                 <CreateUserForm signUpUser={signUpUser}/>
                 <p>{errors}</p>
                 <p>Already have an account?</p>
-                <li><Link to="/login"><p>Login</p></Link></li>
+                <li><Link to="/login"><p>Log in</p></Link></li>
             </div>
         </>
     );

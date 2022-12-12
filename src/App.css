@@ -14,6 +14,9 @@ h1, h2, h3, h4, h5 {
 li{
     list-style: none;
 }
+.PageWrapper{
+    margin: 0 100px;
+}
 
 header {
     background-color: white;
@@ -29,14 +32,15 @@ nav {
 }
 .nav--logo a {
     display: flex;
-    flex-direction: row;
 }
 .nav--logo p {
-    color: #20A4F3;
+    background: -webkit-linear-gradient(45deg, #15183B, #D83D66, #D8AC90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: 'Shrikhand', cursive;
     font-size: 32px;
     font-weight: 400;
-    margin: 0 3px;
+    margin: 0;
 }
 .nav--links {
     display: flex;
@@ -55,7 +59,7 @@ a:link { text-decoration: none; }
 
 .create-post--nav p{
     border-right: 2px solid #D0B7B7;
-    color: #20A4F3;
+    color: #D83D66;
     font-weight: 800;
     margin-right: 15px;
     padding-right: 30px;
@@ -71,21 +75,26 @@ a:link { text-decoration: none; }
     margin: 0 auto;
 }
 .UserAuth h1 {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 400;
     text-align: center;
+    color: #15183B;
+    text-shadow:
+    3px 3px 0 #D8AC90;
 }
 .UserAuth p {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 300;
     text-align: center;
 }
 .UserAuth a p {
-    background-color: #D0B7B7;
-    color: white;
-    width: 160px;
+    border: 2px solid #D83D66;
+    border-radius: 5px;
+    color: #D83D66;
+    box-shadow: 5px 5px 0px #D83D66;
+    width: 130px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 7px;
 }
 
 .FormElement{
