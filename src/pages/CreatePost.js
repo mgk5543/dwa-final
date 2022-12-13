@@ -34,19 +34,19 @@ function CreatePostPage({ app, isLoading, isLoggedIn, userInformation, setIsLogg
             
             
             try {
-                const imageUpload = await uploadBytes(imageRef, imageToUpload).then(
+                await uploadBytes(imageRef, imageToUpload).then(
                     (snapshot) => {
                         console.log("Uploaded a blob or file!", snapshot);
                         return snapshot;
                     }
                 );
-                const font1Upload = await uploadBytes(font1Ref, font1ToUpload).then(
+                await uploadBytes(font1Ref, font1ToUpload).then(
                     (snapshot) => {
                         console.log("Uploaded a blob or file!", snapshot);
                         return snapshot;
                     }
                 );
-                const font2Upload = await uploadBytes(font2Ref, font2ToUpload).then(
+                await uploadBytes(font2Ref, font2ToUpload).then(
                     (snapshot) => {
                         console.log("Uploaded a blob or file!", snapshot);
                         return snapshot;
