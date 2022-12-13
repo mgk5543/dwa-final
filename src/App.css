@@ -12,7 +12,14 @@ beige: #D8AC90
 body{
     font-family: 'Lexend', sans-serif;
 }
-
+h1 {
+    font-size: 3.2vw;
+    font-weight: 400;
+    text-align: center;
+    color: #15183B;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
 h1, h2, h3, h4, h5 {
     font-family: 'Shrikhand', cursive;
     font-weight: 400;
@@ -27,6 +34,8 @@ li{
 /*-------------Header Component-------------*/
 
 header {
+    background-color: white;
+    position: fixed;
     width: 100%;
 }
 nav {
@@ -75,30 +84,34 @@ a:link { text-decoration: none; }
 /*-------------Home Page-------------*/
 
 .cover {
+    height: 100vh;
+    overflow: hidden;
+}
+.cover-top {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-top: 130px;
-    margin-bottom: 50px;
+    margin-top: 12vw;
+    margin-bottom: 3vw;
 }
-.cover h2, h3 {
+.cover-top h2, h3 {
     font-family: 'Lexend', sans-serif;
     margin: 0;
     padding: 0;
 }
-.cover h1 {
+.cover-top h1 {
     color:  #15183B;
     font-size: 5vw;
     margin: 0;
     padding: 0;
     line-height: 1;
 }
-.cover h2 {
+.cover-top h2 {
     font-size: 3vw;
     font-weight: 1000;
     line-height: 1.1;
 }
-.cover h3 {
+.cover-top h3 {
     color: #D83D66;
     font-size: 1.6vw;
     margin-top: 15px;
@@ -108,54 +121,143 @@ a:link { text-decoration: none; }
     margin-right: 50px;
 }
 
+.cover-buttons {
+    margin: 0 auto;
+    padding: 0;
+    width: 20%;
+}
+.create-post--home a, .explore--home {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    font-size: 1.1vw;
+    height: 3vw;
+    justify-content: center;
+    margin: 15px;
+}
+.create-post--home a{
+    background-color: #D8AC90;
+    color: white;
+    font-weight: 600;
+}
+.explore--home {
+    border: 2px solid #D83D66;
+    color: #D83D66;
+}
+
 *{
     scroll-behavior: smooth;
 }
 
-.PostComponentWrapper {
+.PostComponent {
     background-color: pink;
-    height: 17vw;
+    display: flex;
+    justify-content: center;
+    height: auto;
     width: 25vw;
 }
-.PostComponentWrapper img {
+.PostComponent--image {
     border-radius: 10px;
     height: 15vw;
     object-fit: cover;
     width: 25vw;
 }
+.font1-image, .font2-image {
+    min-height: auto;
+    max-height: 3vw;
+    object-fit: cover;
+}
+.font2-image  {
+    max-height: 1.5vw;
+}
+.colorsSamples {
+    height: 1vw;
+    width: 1vw;
+}
 
-/*-------------Login and Create User Page-------------*/
+/*-------------Form Pages-------------*/
 
-.UserAuth {
+.Form {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 30%;
     margin: 0 auto;
+    margin-bottom: 6vw;
 }
-.UserAuth h1 {
-    font-size: 42px;
-    font-weight: 400;
-    text-align: center;
-    color: #15183B;
-    text-shadow:
-    3px 3px 0 #D8AC90;
-}
-.UserAuth p {
+.Form p {
     font-size: 18px;
     font-weight: 300;
-    text-align: center;
+    margin: 0px;
+    text-align: left;
 }
-.UserAuth a p {
+.Form button {
+    background-color: white;
     border: 2px solid #D83D66;
     border-radius: 5px;
-    color: #D83D66;
     box-shadow: 5px 5px 0px #D83D66;
-    width: 130px;
+    color: #D83D66;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+    font-size: 1.2vw;
     margin: 0 auto;
+    margin-top: 40px;
     padding: 7px;
+    transition: color 150ms ease-out;
+    transition: border 200ms ease-out;
+    transition: box-shadow 200ms ease-out;
+    width: 10vw;
+}
+.Form button:hover {
+    border: 2px solid #D8AC90;
+    box-shadow: 5px 5px 0px #D8AC90;
+    cursor: pointer;
+    color: #D8AC90;
+}
+
+.Form a p {
+    color: #D83D66;
+    font-weight: 800;
+    padding: 7px;
+    margin: 0;
+    transition: color 150ms ease-out;
+}
+.Form a p:hover {
+    color: #D8AC90;
+}
+
+.authorization {
+    margin-top: 50px;
 }
 
 .FormElement{
     display: flex;
     flex-direction: column;
+}
+.FormElement label {
+    font-size: 1.2vw;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.FormElement textarea {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1vw;
+    font-weight: 350;
+    height: 1.6vw;
+    inline-size: 300px;
+    overflow-wrap: break-word;
+    hyphens: manual;
+    resize: none;
+    width: 100%;
+}
+
+.longTextInput {
+    height: 4vw !important;
+}
+
+.PostFormElement h2 {
+    font-size: 2.5vw !important;
+    margin: 0;
+    margin-top: 40px;
+    padding: 0;
+    text-align: center;
 }

@@ -61,12 +61,14 @@ function CreateUserPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformati
     return (
         <>
         <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUserInformation={setUserInformation}/>
-            <div className="PageWrapper UserAuth">
+            <div className="PageWrapper Form">
                 <h1>Create User</h1>
                 <CreateUserForm signUpUser={signUpUser}/>
                 <p>{errors}</p>
-                <p>Already have an account?</p>
-                <li><Link to="/login"><p>Log in</p></Link></li>
+                <div className="authorization">
+                    <p>Already have an account?</p>
+                    <li><Link to="/login"><p>Log in</p></Link></li>
+                </div>
             </div>
         </>
     );
