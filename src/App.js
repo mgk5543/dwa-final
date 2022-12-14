@@ -67,7 +67,7 @@ function App() {
       ),
     },
     {
-      path: "/user:id",
+      path: "/user/:id",
       element: (
         <UserOverview 
           isLoading={isLoading} 

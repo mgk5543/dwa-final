@@ -27,9 +27,6 @@ h1, h2, h3, h4, h5 {
 li{
     list-style: none;
 }
-.PageWrapper{
-    margin: 0 100px;
-}
 
 /*-------------Header Component-------------*/
 
@@ -149,30 +146,58 @@ a:link { text-decoration: none; }
     scroll-behavior: smooth;
 }
 
-.PostComponent {
-    background-color: pink;
+.PostsWrapper {
     display: flex;
-    justify-content: center;
+    justify-content: content;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.PostComponent {
+    display: flex;
     height: auto;
+    justify-content: center;
+    margin: 30px 1vw;
     width: 25vw;
 }
 .PostComponent--image {
-    border-radius: 10px;
     height: 15vw;
     object-fit: cover;
     width: 25vw;
 }
+.fontsWrapper{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 25vw;
+}
 .font1-image, .font2-image {
     min-height: auto;
     max-height: 3vw;
+    max-width: 25vw;
     object-fit: cover;
 }
+.font1-image {
+    margin-top: 10px;
+}
 .font2-image  {
+    margin: 10px;
     max-height: 1.5vw;
 }
+.colorsSamplesWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .colorsSamples {
-    height: 1vw;
-    width: 1vw;
+    color: white;
+    font-size: 1vw;
+    height: 3vw;
+    line-height: 1;
+    text-align: center;
+    width: 8.33vw;
 }
 
 /*-------------Form Pages-------------*/
@@ -226,6 +251,9 @@ a:link { text-decoration: none; }
 }
 
 .authorization {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     margin-top: 50px;
 }
 
@@ -238,7 +266,7 @@ a:link { text-decoration: none; }
     font-weight: 500;
     margin: 10px 0;
 }
-.FormElement textarea {
+.FormElement textarea, input {
     font-family: 'Lexend', sans-serif;
     font-size: 1vw;
     font-weight: 350;

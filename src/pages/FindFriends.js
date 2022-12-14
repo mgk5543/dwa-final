@@ -2,7 +2,7 @@ import { React, useEffect} from 'react';
 import { useNavigate } from 'react-router';
 import Header from '../components/Header';
 
-function UserOverview({ match:{params:{name}}, isLoading, isLoggedIn, userInformation, setIsLoggedIn, setUserInformation }) {
+function FindFriendsPage({ isLoading, isLoggedIn, userInformation, setIsLoggedIn, setUserInformation }) {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -12,13 +12,11 @@ function UserOverview({ match:{params:{name}}, isLoading, isLoggedIn, userInform
     return (
         <>
             <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUserInformation={setUserInformation} />
-            <div className="PageWrapper Form">
-                <h1>User Profile</h1>
-                <p>{userInformation.displayName}</p>
-                <p>{userInformation.email}</p>
+            <div className="PageWrapper">
+                <h1>Find Friends Page</h1>
             </div>
         </>
     );
 }
 
-export default UserOverview;
+export default FindFriendsPage;

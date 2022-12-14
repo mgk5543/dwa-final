@@ -10,7 +10,7 @@ function CreateUserForm( {signUpUser} ) {
             <textarea type="text" name="email"/>
 
             <label htmlFor="password">Password</label>
-            <textarea type="text" name="password"/>
+            <input type="password" name="password"/>
             
             <button type="submit">Submit</button>
         </form>

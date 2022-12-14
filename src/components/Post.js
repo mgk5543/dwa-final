@@ -39,25 +39,30 @@ function Post({ caption, imageAlt, imageUrl, userName, userId, font1Url, font2Ur
     else{
         return (
             <div className="PostComponentWrapper">
+                <div className="colorsSamplesWrapper">
+                    <div className="colorsSamples" style={{backgroundColor: `${color1}`}}><p>{color1}</p></div> 
+                    <div className="colorsSamples" style={{backgroundColor: `${color2}`}}><p>{color2}</p></div>
+                    <div className="colorsSamples" style={{backgroundColor: `${color3}`}}><p>{color3}</p></div>
+                </div>
                 <img 
                 className="PostComponent--image"
                 src={image} 
                 alt={imageAlt}
                 />
-                <img 
-                className="font1-image"
-                src={font1}
-                alt="first font"
-                />
-                <img 
-                className="font2-image"
-                src={font2} 
-                alt="second font"
-                />
-                <div className="colorsSamples" style={{backgroundColor: `${color1}`}}/><p>{color1}</p>
-                <div className="colorsSamples" style={{backgroundColor: `${color2}`}}/><p>{color2}</p>
-                <div className="colorsSamples" style={{backgroundColor: `${color3}`}}/><p>{color3}</p>
+                <div className="fontsWrapper">
+                    <img 
+                    className="font1-image"
+                    src={font1}
+                    alt="first font"
+                    />
+                    <img 
+                    className="font2-image"
+                    src={font2} 
+                    alt="second font"
+                    />
+                </div>
                 <p className="Caption">{caption}</p>
+                {console.log(userId)}
                 <p>Posted by: <a href={`user/${userId}`}>{userName}</a></p>
             </div>
     )

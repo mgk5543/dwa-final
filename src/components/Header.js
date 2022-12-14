@@ -47,7 +47,7 @@ function Header( {isLoggedIn, setIsLoggedIn, setUserInformation}) {
                     )}
                     {isLoggedIn && (
                         <li>
-                            <Link to="/user:id"><p>Profile</p></Link>
+                            <Link to="/user/:id"><p>Profile</p></Link>
                         </li>
                     )}
                     {isLoggedIn && (<Link to="/login" onClick={() => logout()} className="logout-button"><p>Log Out</p></Link>)}

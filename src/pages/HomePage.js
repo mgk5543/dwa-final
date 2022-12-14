@@ -61,7 +61,7 @@ function HomePage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInformatio
                     </div>
                 </div>
                 
-                <section id="scroll-to">
+                <section id="scroll-to" className="PostsWrapper">
                     {postData.map((post,index) => (
                         <div 
                             className="PostComponent"
