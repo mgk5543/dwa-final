@@ -39,6 +39,7 @@ function Post({ caption, imageAlt, imageUrl, userName, userId, font1Url, font2Ur
     else{
         return (
             <div className="PostComponentWrapper">
+                <p className="Caption">{caption}</p>
                 <div className="colorsSamplesWrapper">
                     <div className="colorsSamples" style={{backgroundColor: `${color1}`}}><p>{color1}</p></div> 
                     <div className="colorsSamples" style={{backgroundColor: `${color2}`}}><p>{color2}</p></div>
@@ -61,9 +62,7 @@ function Post({ caption, imageAlt, imageUrl, userName, userId, font1Url, font2Ur
                     alt="second font"
                     />
                 </div>
-                <p className="Caption">{caption}</p>
                 {console.log(userId)}
-                <p>Posted by: <a href={`user/${userId}`}>{userName}</a></p>
             </div>
     )
     }

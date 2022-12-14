@@ -10,7 +10,7 @@ function CreatePostForm({ createPost }) {
                 name="imageToUpload"
                 accept="image/png, image/jpeg, image/jpg, image/gif"
             />
-            <label htmlFor="caption">Caption</label>
+            <label htmlFor="caption">Title</label>
             <textarea type="text" name="caption" className="longTextInput"/>
             <label htmlFor="imageAlt">Image Alt</label>
             <textarea type="text" name="imageAlt" className="longTextInput"/>

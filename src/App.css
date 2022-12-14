@@ -24,6 +24,10 @@ h1, h2, h3, h4, h5 {
     font-family: 'Shrikhand', cursive;
     font-weight: 400;
 }
+
+h2 {
+    margin: 0px;
+}
 li{
     list-style: none;
 }
@@ -148,34 +152,45 @@ a:link { text-decoration: none; }
 
 .PostsWrapper {
     display: flex;
-    justify-content: content;
+    flex-direction: column;
+    align-items: center;
     width: 80vw;
-    margin: 0 auto;
+    margin: 5vw auto;
 }
 
 .PostComponent {
     display: flex;
     height: auto;
     justify-content: center;
-    margin: 30px 1vw;
-    width: 25vw;
+    width: 36vw;
+    margin: 3vw 0px;
+}
+.PostComponentWrapper p {
+    font-size: 1.2vw !important;
+    font-weight: 800 !important;
+    margin: 1vw;
+    text-align: center;
 }
 .PostComponent--image {
-    height: 15vw;
+    height: 20vw;
     object-fit: cover;
-    width: 25vw;
+    width: 36vw;
 }
 .fontsWrapper{
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 25vw;
+    max-width: 36vw;
 }
 .font1-image, .font2-image {
-    min-height: auto;
-    max-height: 3vw;
-    max-width: 25vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 2vw;
+    max-height: 5vw;
+    max-width: 26vw;
     object-fit: cover;
 }
 .font1-image {
@@ -191,13 +206,18 @@ a:link { text-decoration: none; }
     flex-direction: row;
     justify-content: center;
 }
+.colorsSamplesWrapper p {
+    font-weight: 400 !important;
+}
 .colorsSamples {
+    align-items: center;
     color: white;
+    display: flex;
     font-size: 1vw;
-    height: 3vw;
+    height: 4vw;
+    justify-content: center;
     line-height: 1;
-    text-align: center;
-    width: 8.33vw;
+    width: 12vw;
 }
 
 /*-------------Form Pages-------------*/
@@ -288,4 +308,39 @@ a:link { text-decoration: none; }
     margin-top: 40px;
     padding: 0;
     text-align: center;
+}
+
+
+
+.Overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 6vw;
+}
+
+.Overview--text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 36vw;
+}
+.Overview--text h2, p {
+    margin: 0;
+    padding: 0;
+}
+.Overview--text h2 {
+    color: #D8AC90;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+}
+.Overview h3 {
+    color: #D83D66;
+    font-family: 'Shrikhand', cursive;
+    font-size: 2.5vw;
+    margin-top: 3vw;
+}
+.Overview--text p:first-of-type {
+    margin-bottom: 30px;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 function CreateUserForm( {signUpUser} ) {
     return (
         <form className="FormElement" onSubmit={(e) => signUpUser(e)}>
-            <label htmlFor="displayName">Name</label>
+            <label htmlFor="displayName">Username</label>
             <textarea type="text" name="displayName"/>
 
             <label htmlFor="email">Email</label>

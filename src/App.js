@@ -66,10 +66,11 @@ function App() {
          />
       ),
     },
-    {
+    { 
       path: "/user/:id",
       element: (
         <UserOverview 
+          app={appInitialized}
           isLoading={isLoading} 
           isLoggedIn={isLoggedIn} 
           userInformation={userInformation}
